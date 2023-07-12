@@ -153,4 +153,14 @@ class LiffCopilot {
     Reload() {
         window.location.reload();
     }
+
+    Debug(text) {
+        if (document.querySelector('#liff-debug')) {
+            let debug_el = document.querySelectorAll('#liff-debug');
+
+            for (let i = 0; i < debug_el.length; i++) {
+                debug_el[i].innerHTML += "<br />" + text;
+            }
+        }
+    }
 }
