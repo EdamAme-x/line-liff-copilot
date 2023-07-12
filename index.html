@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIFF-Copilot-Example</title>
+
+</head>
+
+<body>
+    LIFF-Copilot-Example
+    <script src='https://static.line-scdn.net/liff/edge/versions/2.1.13/sdk.js'></script>
+    <script src="line-liff-copilot.js"></script>
+    <script>
+
+        let CoLiff = new LiffCopilot("1661226722-beANnaeG", true, start());
+
+        function start() {
+            console.log("start!")
+            CoLiff.Share("text", "test! https://github.com/EdamAme-x/line-liff-copliot")
+        } // 初期化が終わった後に呼び出し callback
+
+    </script>
+</body>
+
+</html>
