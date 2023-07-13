@@ -40,7 +40,9 @@ class LiffCopilot {
 
         // 情報を取得
         this.State = liff.state; // URLに指定した情報(クエリ)
-        this.BeforeURL = liff.referrer(); // LIFFに遷移する前のURL
+        if (liff.referrer()) {
+            this.BeforeURL = liff.referrer();
+        } // LIFFに遷移する前のURL
         this.OS = liff.getOS(); // OS => ios | android | ...
         this.Lang = liff.getLanguage(); // LINEの使用言語 => ja | en | ...
         this.Version = liff.getVersion(); // LIFFのバージョン 2.21.4 | X.XX.X | ...
