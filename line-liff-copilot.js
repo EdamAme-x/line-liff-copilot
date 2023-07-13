@@ -20,7 +20,7 @@ class LiffCopilot {
         this.debug = _debug;
 
         liff.init({
-            liffId: this.liffId, // liffid
+            liffId: this.liffid, // liffid
             withLoginOnExternalBrowser: true // 外部ブラウザの際自動ログイン
         }).then(() => {
             this.init(_callback);
