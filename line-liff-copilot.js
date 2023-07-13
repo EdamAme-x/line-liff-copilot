@@ -40,8 +40,8 @@ class LiffCopilot {
 
         // 情報を取得
         this.State = liff.state; // URLに指定した情報(クエリ)
-        if (liff.referrer()) {
-            this.BeforeURL = liff.referrer();
+        if (true) {
+            this.BeforeURL = "https://twitter.com/macl2189";
         } // LIFFに遷移する前のURL
         this.OS = liff.getOS(); // OS => ios | android | ...
         this.Lang = liff.getLanguage(); // LINEの使用言語 => ja | en | ...
