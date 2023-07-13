@@ -59,7 +59,7 @@ class LiffCopilot {
 
         this.InfoIss = this.Info.iss; // access.line.me 用途不明
         this.InfoSub = this.Info.sub; // mid風の物 用途不明
-        this.InfoAuth = this.Info.amr[0] // lineauthlogin 用途不明
+        //this.InfoAuth = this.Info.amr[0] // lineauthlogin 用途不明
 
         this.Name = this.Info.name; // ユーザーの名前
 
