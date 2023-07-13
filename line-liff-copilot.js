@@ -54,16 +54,16 @@ class LiffCopilot {
 
         this.Friendship = liff.getFriendship(); // liffを1VS1で開いている場合に友達で有るかを返す
 
-        // ユーザーの情報
+        // ユーザーの情報 for OC => Error
         this.Info = liff.getDecodedIDToken();
 
         //this.InfoIss = this.Info.iss; // access.line.me 用途不明
         //this.InfoSub = this.Info.sub; // mid風の物 用途不明
         //this.InfoAuth = this.Info.amr[0] // lineauthlogin 用途不明
 
-        this.Name = this.Info.name; // ユーザーの名前
+        //this.Name = this.Info.name; // ユーザーの名前
 
-        this.Icon = this.Info.picture; // ユーザーのアイコンのcdnURL
+        //this.Icon = this.Info.picture; // ユーザーのアイコンのcdnURL
 
         // Context
         this.Context = liff.getContext(); // LIFFブラウザが起動された場所の情報
