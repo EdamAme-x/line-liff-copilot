@@ -52,7 +52,7 @@ class LiffCopilot {
         this.AccessToken = liff.getAccessToken(); // LIFFブラウザ上でログインしている生IDToken　ブラウザを消すとリセット
         this.IDToken = liff.getIDToken(); // LIFFブラウザ上でログインしているIDToken @near AccessToken
 
-        this.Friendship = liff.getFriendship(); // liffを1VS1で開いている場合に友達で有るかを返す
+        this.Friendship = liff.getFriendship(); // liffを1VS1で開いている場合にリンクした公式アカウントと友達で有るかを返す
 
         // ユーザーの情報 for OC => Error
         this.Info = liff.getDecodedIDToken();
@@ -118,20 +118,20 @@ class LiffCopilot {
         }
     }
 
-    async Send(type, message) {
+    async Send(message) {
         await liff.sendMessages([{
-            type: type,
+            type: "text",
             text: message
         }]) // 開いている場所に送信
     } // async
 
     async PowerSend(array) {
         await liff.sendMessages(array)
-    } // [{type: type, text: message},...]
+    } // [{type: text, text: message},...]
 
-    Share(type, message) {
+    Share(message) {
         liff.shareTargetPicker([{
-            type: type,
+            type: "text",
             text: message
         }])
     } // シェア処理
