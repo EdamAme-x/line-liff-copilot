@@ -1,105 +1,74 @@
-/**
- * @Author amex / @macl2189
- * @Repo "https://github.com/EdamAme-x/line-liff-copliot"
- * @Version 1.00
- * @For LINE LIFF SDK
- * @Contact "https://twitter.com/macl2189"
- */
-
 'use strict';
 
 class LiffCopilot {
-    /**
-     * @rule {variable} _{variableName}
-     * @param {string} _liffid liffid
-     * @param {boolean} _debug エラーメッセージ・デバッグメッセージを表示するか
-     * @param {function} _callback 初期化時に呼び出すコールバック関数
-     */
     constructor(_liffid, _debug, _callback) {
         this.liffid = _liffid;
         this.debug = _debug;
 
         liff.init({
-            liffId: this.liffid, // liffid
-            withLoginOnExternalBrowser: true // 外部ブラウザの際自動ログイン
+            liffId: this.liffid,
+            withLoginOnExternalBrowser: true
         }).then(() => {
             this.init(_callback);
         }).catch((err) => {
-            this.error("LIFF-COPILOT | Error \n" , err);
-        })
+            this.error("LIFF-COPILOT | Error \n", err);
+        });
     }
 
-    /**
-     * @param {function} init liff初期化時に呼び出し
-     * @param {function} _callback 初期化時に呼び出すコールバック関数
-     */
     init(_callback) {
-        if (_callback) {
+        if (_callback && typeof _callback === "function") {
             _callback();
-        } // 存在するなら
+        }
 
-        // 情報を取得
-        this.State = liff.state; // URLに指定した情報(クエリ)
-        if (true) {
+        function isUse(value) {
+            if (typeof value === "undefined" || value === null) {
+                return false;
+            } else {
+                return value;
+            }
+        }
+
+        this.State = liff.state;
+        if (isUse(true)) {
             this.BeforeURL = "https://twitter.com/macl2189";
-        } // LIFFに遷移する前のURL
-        this.OS = liff.getOS(); // OS => ios | android | ...
-        this.Lang = liff.getLanguage(); // LINEの使用言語 => ja | en | ...
-        this.Version = liff.getVersion(); // LIFFのバージョン 2.21.4 | X.XX.X | ...
-        this.LineVersion = liff.getLineVersion(); // LINEのバージョン 13.10.0 | XX.XX.X | ...
-        this.InClient = liff.isInClient(); // LIFFブラウザ上で動作しているか。
-        this.InLogin = liff.isLoggedIn(); // LIFFブラウザ上でログインしているか。 true | false
-        this.AccessToken = liff.getAccessToken(); // LIFFブラウザ上でログインしている生IDToken　ブラウザを消すとリセット
-        this.IDToken = liff.getIDToken(); // LIFFブラウザ上でログインしているIDToken @near AccessToken
+        }
+        this.OS = liff.getOS();
+        this.Lang = liff.getLanguage();
+        this.Version = liff.getVersion();
+        this.LineVersion = liff.getLineVersion();
+        this.InClient = liff.isInClient();
+        this.InLogin = liff.isLoggedIn();
+        this.AccessToken = liff.getAccessToken();
+        this.IDToken = liff.getIDToken();
 
-        this.Friendship = liff.getFriendship(); // liffを1VS1で開いている場合にリンクした公式アカウントと友達で有るかを返す
+        this.Friendship = liff.getFriendship();
 
-        // ユーザーの情報 for OC => Error
         this.Info = liff.getDecodedIDToken();
 
-        //this.InfoIss = this.Info.iss; // access.line.me 用途不明
-        //this.InfoSub = this.Info.sub; // mid風の物 用途不明
-        //this.InfoAuth = this.Info.amr[0] // lineauthlogin 用途不明
+        this.Context = liff.getContext();
+        this.CtxType = isUse(this.Context.type);
+        this.CtxUserID = isUse(this.Context.userId);
+        this.CtxLiffID = isUse(this.Context.liffId);
+        this.CtxEndpoint = isUse(this.Context.endpointUrl);
+        this.CtxAccessToken = isUse(this.Context.accessTokenHash);
+        this.CtxView = isUse(this.Context.viewType);
 
-        //this.Name = this.Info.name; // ユーザーの名前
-
-        //this.Icon = this.Info.picture; // ユーザーのアイコンのcdnURL
-
-        // Context
-        this.Context = liff.getContext(); // LIFFブラウザが起動された場所の情報
-        this.CtxType = this.Context.type; // external | internal / 外部ブラウザ　| 内部ブラウザ
-
-        this.CtxUserID = this.Context.userId; // uid midとは異なる為注意 this.InfoSubとおそらく等しい
-        this.CtxLiffID = this.Context.liffId; // liffid
-        this.CtxEndpoint = this.Context.endpointUrl; // endpointUrl https://~.~/~
-        this.CtxAccessToken = this.Context.accessTokenHash; // 用途不明
-
-        this.CtxView = this.Context.viewType; // full | compact | ...
-        
-        // Profile
         this.Profile = {
-            "uid": liff.getProfile().userId, // uid
-            "name": liff.getProfile().displayName, // ユーザーの名前
-            "status": liff.getProfile().statusMessage, // ユーザーのステメ
-            "picture": liff.getProfile().pictureUrl, // ユーザーのアイコンのcdnURL
-        }
-
-        // Methods
+            "uid": isUse(liff.getProfile().userId),
+            "name": isUse(liff.getProfile().displayName),
+            "status": isUse(liff.getProfile().statusMessage),
+            "picture": isUse(liff.getProfile().pictureUrl)
+        };
 
         this.CanUseApi = (_apiName) => {
-            return liff.isApiAvailable(_apiName); // apiが使用可能か
-        }
+            return liff.isApiAvailable(_apiName);
+        };
 
         this.ApiInfo = (_apiName) => {
-            return liff.getContext.availability[_apiName]; // apiの情報を返す {permission: true | false , minVer: XX.XX.X}
-        }
-        
+            return liff.getContext.availability[_apiName];
+        };
     }
 
-    /**
-     * @param {string} message コンソールに流すメッセージ 
-     * @param {function} log ログ出力
-     */
     log(message) {
         if (this.debug) {
             console.log(message);
@@ -107,10 +76,6 @@ class LiffCopilot {
         }
     }
 
-    /**
-     * @param {string} message コンソールに流すメッセージ 
-     * @param {function} error エラー出力
-     */
     error(message) {
         if (this.debug) {
             console.error(message);
@@ -122,31 +87,38 @@ class LiffCopilot {
         await liff.sendMessages([{
             type: "text",
             text: message
-        }]) // 開いている場所に送信
-    } // async
+        }]);
+    }
+
+    async SendFlex(content) {
+        await liff.sendMessages([{
+            type: "flex",
+            altText: "FlexMessage",
+            contents: content
+        }]);
+    }
 
     async PowerSend(array) {
-        await liff.sendMessages(array)
-    } // [{type: text, text: message},...]
+        await liff.sendMessages(array);
+    }
 
     Share(message) {
         liff.shareTargetPicker([{
             type: "text",
             text: message
-        }])
-    } // シェア処理
-    
+        }]);
+    }
+
     PowerShare(array) {
-        liff.shareTargetPicker(array)
-    } // シェア処理 [{type: type, text: message},...]
-    
+        liff.shareTargetPicker(array);
+    }
 
     Open(url, external) {
         liff.openWindow({
             url: url,
             external: external
         });
-    } // Windowを開く urlが遷移先 externalは外部ブラウザに遷移するかどうか
+    }
 
     Close() {
         liff.closeWindow();
