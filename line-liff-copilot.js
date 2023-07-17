@@ -1,3 +1,12 @@
+
+/**
+ * @Author amex / @macl2189
+ * @Repo "https://github.com/EdamAme-x/line-liff-copliot"
+ * @Version 1.00
+ * @For LINE LIFF SDK
+ * @Contact "https://twitter.com/macl2189"
+ */
+
 'use strict';
 
 class LiffCopilot {
