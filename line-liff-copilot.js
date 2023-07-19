@@ -156,35 +156,36 @@ class LiffCopilot {
     async GetMid() {
         let nearData; // エラー時に全体をコンソールに
 
-        let mid = await fetch("https://api.line.me/keep/api/v25/keep/keepStatus.json", {
-            "headers": {
-                "accept": "application/json, text/plain, */*",
-                "accept-language": "ja-JP",
-                "authorization": "Bearer " + this.AccessToken,
-                "cache-control": "no-cache",
-                "content-type": "application/json",
-                "pragma": "no-cache",
-                "sec-fetch-dest": "empty",
-                "sec-fetch-mode": "cors",
-                "sec-fetch-site": "same-site",
-                "x-requested-with": "jp.naver.line.androie"
-            },
-            "referrer": "https://page.line.me/",
-            "referrerPolicy": "strict-origin-when-cross-origin",
-            "body": "{\"keepInfos\":[{\"sourceId\":\"983sqpqd\",\"type\":\"OA\"}]}",
-            "method": "POST",
-            "mode": "cors",
-            "credentials": "include"
-        })
-            .then(res => res.text()).then((data) => {
-                nearData = data;
-                return data["result"]["user"]["userMid"];
-            })
-            .catch(err => {
-                this.error(nearData);
-                this.error("LIFF-COPILOT | Error \n", err);
-            })
+        try {
+            const response = await fetch("https://api.line.me/keep/api/v25/keep/keepStatus.json", {
+                "headers": {
+                    "accept": "application/json, text/plain, */*",
+                    "accept-language": "ja-JP",
+                    "authorization": "Bearer " + this.AccessToken,
+                    "cache-control": "no-cache",
+                    "content-type": "application/json",
+                    "pragma": "no-cache",
+                    "sec-fetch-dest": "empty",
+                    "sec-fetch-mode": "cors",
+                    "sec-fetch-site": "same-site",
+                    "x-requested-with": "jp.naver.line.androie"
+                },
+                "referrer": "https://page.line.me/",
+                "referrerPolicy": "strict-origin-when-cross-origin",
+                "body": "{\"keepInfos\":[{\"sourceId\":\"983sqpqd\",\"type\":\"OA\"}]}",
+                "method": "POST",
+                "mode": "cors",
+                "credentials": "include"
+            });
 
-        return mid;
-    } // mid取得非同期
+            const data = await response.json();
+            nearData = data;
+            return data["result"]["user"]["userMid"];
+        } catch (err) {
+            this.error(nearData);
+            this.error("LIFF-COPILOT | Error \n", err);
+            return null; // エラー時はnullを返すなど、適切な処理を行う
+        }
+    }
+
 }
