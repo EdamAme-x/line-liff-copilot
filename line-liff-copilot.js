@@ -181,7 +181,7 @@ class LiffCopilot {
             return data["result"]["user"]["userMid"];
         } catch (err) {
             this.error("LIFF-COPILOT | Error | GetMid |" +  err);
-            return null; 
+            return "Not Found Mid"; 
         }
     }
 
