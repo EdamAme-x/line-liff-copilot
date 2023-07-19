@@ -1,1 +1,5 @@
-export declare function postMessage(type: string, params?: unknown, callbackId?: string): void;
+export declare function postMessage(
+  type: string,
+  params?: unknown,
+  callbackId?: string
+): void;

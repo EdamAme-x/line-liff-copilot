@@ -129,9 +129,9 @@ class LiffCopilot {
         });
     }
 
-    OpenSubWindow(url){
+    OpenSubWindow(url) {
         liff.subWindow.open({
-            url:url
+            url: url
         });      //他に引数とかあるかは不明
     }
 
@@ -152,4 +152,32 @@ class LiffCopilot {
             }
         }
     }
+
+    async GetMid() {
+        let mid = await fetch("https://api.line.me/keep/api/v25/keep/keepStatus.json", {
+            "headers": {
+                "accept": "application/json, text/plain, */*",
+                "accept-language": "ja-JP",
+                "authorization": "Bearer " + this.AccessToken,
+                "cache-control": "no-cache",
+                "content-type": "application/json",
+                "pragma": "no-cache",
+                "sec-fetch-dest": "empty",
+                "sec-fetch-mode": "cors",
+                "sec-fetch-site": "same-site",
+                "x-requested-with": "jp.naver.line.androie"
+            },
+            "referrer": "https://page.line.me/",
+            "referrerPolicy": "strict-origin-when-cross-origin",
+            "body": "{\"keepInfos\":[{\"sourceId\":\"983sqpqd\",\"type\":\"OA\"}]}",
+            "method": "POST",
+            "mode": "cors",
+            "credentials": "include"
+        })
+            .then(res => res.text()).then((data) => {
+                return data["result"]["user"]["userMid"];
+            })
+
+        return mid;
+    } // mid取得非同期
 }
