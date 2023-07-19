@@ -1,0 +1,17 @@
+{
+  "name": "@liff/types",
+  "version": "2.22.2",
+  "description": "@liff/types",
+  "license": "SEE LICENSE IN README.md",
+  "files": [
+    "index.d.ts"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf ./tsconfig.tsbuildinfo"
+  }
+}

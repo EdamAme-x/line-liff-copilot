@@ -1,0 +1,41 @@
+{
+  "name": "@liff/close-window",
+  "version": "2.22.2",
+  "description": "@liff/close-window",
+  "license": "SEE LICENSE IN README.md",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.es.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "build:cdn": "rollup -c rollup.config.js",
+    "build:npm": "rollup -c rollup.config.js",
+    "build:watch": "npm run build:npm -- --watch",
+    "dev-server": "npm run build:watch",
+    "dev-server:https": "npm run build:watch",
+    "build:prerelease": "rollup -c rollup.config.prerelease.js",
+    "clean": "rm -rf ./lib ./tsconfig.tsbuildinfo"
+  },
+  "peerDependencies": {
+    "tslib": "^2.3.0"
+  },
+  "dependencies": {
+    "@liff/get-line-version": "2.22.2",
+    "@liff/get-os": "2.22.2",
+    "@liff/native-bridge": "2.22.2",
+    "@liff/types": "2.22.2",
+    "@liff/use": "2.22.2",
+    "@liff/util": "2.22.2"
+  }
+}

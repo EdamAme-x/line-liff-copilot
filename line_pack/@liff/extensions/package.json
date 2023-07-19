@@ -1,0 +1,53 @@
+{
+  "name": "@liff/extensions",
+  "version": "2.22.2",
+  "description": "@liff/extensions",
+  "license": "SEE LICENSE IN README.md",
+  "main": "lib/index.js",
+  "module": "lib/es/index.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "build:extensions": "webpack",
+    "postbuild:extensions": "./scripts/copy_dist.sh",
+    "build:cdn": "npm run build:extensions && rollup -c",
+    "build:npm": "rollup -c rollup.config.js",
+    "build:watch": "npm run build:npm -- --watch",
+    "dev-server": "npm run build:watch",
+    "dev-server:https": "npm run build:watch",
+    "build:prerelease": "rollup -c rollup.config.prerelease.js",
+    "clean": "rm -rf ./dist ./lib ./tsconfig.tsbuildinfo",
+    "deploy": "./scripts/deploy.sh"
+  },
+  "dependencies": {
+    "@liff/add-to-home-screen": "2.22.2",
+    "@liff/check-availability": "2.22.2",
+    "@liff/consts": "2.22.2",
+    "@liff/get-advertising-id": "2.22.2",
+    "@liff/get-line-version": "2.22.2",
+    "@liff/get-os": "2.22.2",
+    "@liff/logger": "2.22.2",
+    "@liff/scan-code": "2.22.2",
+    "@liff/store": "2.22.2",
+    "@liff/types": "2.22.2",
+    "@liff/util": "2.22.2"
+  },
+  "devDependencies": {
+    "license-webpack-plugin": "4.0.2",
+    "terser-webpack-plugin": "5.3.6",
+    "ts-loader": "9.4.2",
+    "webpack": "5.76.0",
+    "webpack-cli": "4.10.0"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "@liff/init",
+  "version": "2.22.2",
+  "description": "@liff/init",
+  "license": "SEE LICENSE IN README.md",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.es.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "build:cdn": "rollup -c rollup.config.js",
+    "build:npm": "rollup -c rollup.config.js",
+    "build:watch": "npm run build:npm -- --watch",
+    "dev-server": "npm run build:watch",
+    "dev-server:https": "npm run build:watch",
+    "build:prerelease": "rollup -c rollup.config.prerelease.js",
+    "clean": "rm -rf ./lib ./tsconfig.tsbuildinfo"
+  },
+  "peerDependencies": {
+    "tslib": "^2.3.0"
+  },
+  "dependencies": {
+    "@liff/check-availability": "2.22.2",
+    "@liff/close-window": "2.22.2",
+    "@liff/consts": "2.22.2",
+    "@liff/extensions": "2.22.2",
+    "@liff/get-line-version": "2.22.2",
+    "@liff/get-os": "2.22.2",
+    "@liff/hooks": "2.22.2",
+    "@liff/i18n": "2.22.2",
+    "@liff/is-api-available": "2.22.2",
+    "@liff/is-in-client": "2.22.2",
+    "@liff/is-logged-in": "2.22.2",
+    "@liff/is-sub-window": "2.22.2",
+    "@liff/logger": "2.22.2",
+    "@liff/login": "2.22.2",
+    "@liff/logout": "2.22.2",
+    "@liff/message-bus": "2.22.2",
+    "@liff/native-bridge": "2.22.2",
+    "@liff/ready": "2.22.2",
+    "@liff/server-api": "2.22.2",
+    "@liff/store": "2.22.2",
+    "@liff/sub-window": "2.22.2",
+    "@liff/types": "2.22.2",
+    "@liff/use": "2.22.2",
+    "@liff/util": "2.22.2"
+  }
+}

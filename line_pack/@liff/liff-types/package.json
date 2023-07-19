@@ -1,0 +1,56 @@
+{
+  "name": "@liff/liff-types",
+  "version": "2.22.2",
+  "description": "@liff/liff-types",
+  "license": "SEE LICENSE IN README.md",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build:cdn": "tsc --emitDeclarationOnly",
+    "build:npm": "tsc --emitDeclarationOnly",
+    "build:prerelease": "tsc --emitDeclarationOnly",
+    "clean": "rm -rf ./lib ./tsconfig.tsbuildinfo"
+  },
+  "peerDependencies": {
+    "tslib": "^2.3.0"
+  },
+  "dependencies": {
+    "@liff/analytics": "2.22.2",
+    "@liff/close-window": "2.22.2",
+    "@liff/get-friendship": "2.22.2",
+    "@liff/get-language": "2.22.2",
+    "@liff/get-line-version": "2.22.2",
+    "@liff/get-os": "2.22.2",
+    "@liff/get-profile": "2.22.2",
+    "@liff/get-version": "2.22.2",
+    "@liff/i18n": "2.22.2",
+    "@liff/init": "2.22.2",
+    "@liff/is-api-available": "2.22.2",
+    "@liff/is-in-client": "2.22.2",
+    "@liff/is-logged-in": "2.22.2",
+    "@liff/is-sub-window": "2.22.2",
+    "@liff/login": "2.22.2",
+    "@liff/logout": "2.22.2",
+    "@liff/native-bridge": "2.22.2",
+    "@liff/open-window": "2.22.2",
+    "@liff/permanent-link": "2.22.2",
+    "@liff/permission": "2.22.2",
+    "@liff/ready": "2.22.2",
+    "@liff/scan-code-v2": "2.22.2",
+    "@liff/send-messages": "2.22.2",
+    "@liff/share-target-picker": "2.22.2",
+    "@liff/store": "2.22.2",
+    "@liff/sub-window": "2.22.2",
+    "@liff/use": "2.22.2"
+  }
+}

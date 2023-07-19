@@ -1,0 +1,290 @@
+{
+  "name": "@line/liff",
+  "version": "2.22.2",
+  "type": "module",
+  "main": "./index.cjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "require": "./index.cjs",
+      "default": "./index.cjs"
+    },
+    "./core": {
+      "types": "./core/index.d.ts",
+      "import": "./core/index.mjs",
+      "require": "./core/index.cjs",
+      "default": "./core/index.cjs"
+    },
+    "./add-to-home-screen": {
+      "types": "./add-to-home-screen.d.ts",
+      "import": "./add-to-home-screen.mjs",
+      "require": "./add-to-home-screen.cjs",
+      "default": "./add-to-home-screen.cjs"
+    },
+    "./analytics": {
+      "types": "./analytics.d.ts",
+      "import": "./analytics.mjs",
+      "require": "./analytics.cjs",
+      "default": "./analytics.cjs"
+    },
+    "./close-window": {
+      "types": "./close-window.d.ts",
+      "import": "./close-window.mjs",
+      "require": "./close-window.cjs",
+      "default": "./close-window.cjs"
+    },
+    "./get-access-token": {
+      "types": "./get-access-token.d.ts",
+      "import": "./get-access-token.mjs",
+      "require": "./get-access-token.cjs",
+      "default": "./get-access-token.cjs"
+    },
+    "./get-advertising-id": {
+      "types": "./get-advertising-id.d.ts",
+      "import": "./get-advertising-id.mjs",
+      "require": "./get-advertising-id.cjs",
+      "default": "./get-advertising-id.cjs"
+    },
+    "./get-aid": {
+      "types": "./get-aid.d.ts",
+      "import": "./get-aid.mjs",
+      "require": "./get-aid.cjs",
+      "default": "./get-aid.cjs"
+    },
+    "./get-context": {
+      "types": "./get-context.d.ts",
+      "import": "./get-context.mjs",
+      "require": "./get-context.cjs",
+      "default": "./get-context.cjs"
+    },
+    "./get-decoded-id-token": {
+      "types": "./get-decoded-id-token.d.ts",
+      "import": "./get-decoded-id-token.mjs",
+      "require": "./get-decoded-id-token.cjs",
+      "default": "./get-decoded-id-token.cjs"
+    },
+    "./get-friendship": {
+      "types": "./get-friendship.d.ts",
+      "import": "./get-friendship.mjs",
+      "require": "./get-friendship.cjs",
+      "default": "./get-friendship.cjs"
+    },
+    "./get-id-token": {
+      "types": "./get-id-token.d.ts",
+      "import": "./get-id-token.mjs",
+      "require": "./get-id-token.cjs",
+      "default": "./get-id-token.cjs"
+    },
+    "./get-is-video-auto-play": {
+      "types": "./get-is-video-auto-play.d.ts",
+      "import": "./get-is-video-auto-play.mjs",
+      "require": "./get-is-video-auto-play.cjs",
+      "default": "./get-is-video-auto-play.cjs"
+    },
+    "./get-language": {
+      "types": "./get-language.d.ts",
+      "import": "./get-language.mjs",
+      "require": "./get-language.cjs",
+      "default": "./get-language.cjs"
+    },
+    "./get-line-version": {
+      "types": "./get-line-version.d.ts",
+      "import": "./get-line-version.mjs",
+      "require": "./get-line-version.cjs",
+      "default": "./get-line-version.cjs"
+    },
+    "./get-os": {
+      "types": "./get-os.d.ts",
+      "import": "./get-os.mjs",
+      "require": "./get-os.cjs",
+      "default": "./get-os.cjs"
+    },
+    "./get-profile-plus": {
+      "types": "./get-profile-plus.d.ts",
+      "import": "./get-profile-plus.mjs",
+      "require": "./get-profile-plus.cjs",
+      "default": "./get-profile-plus.cjs"
+    },
+    "./get-profile": {
+      "types": "./get-profile.d.ts",
+      "import": "./get-profile.mjs",
+      "require": "./get-profile.cjs",
+      "default": "./get-profile.cjs"
+    },
+    "./i18n": {
+      "types": "./i18n.d.ts",
+      "import": "./i18n.mjs",
+      "require": "./i18n.cjs",
+      "default": "./i18n.cjs"
+    },
+    "./init-plugins": {
+      "types": "./init-plugins.d.ts",
+      "import": "./init-plugins.mjs",
+      "require": "./init-plugins.cjs",
+      "default": "./init-plugins.cjs"
+    },
+    "./is-api-available": {
+      "types": "./is-api-available.d.ts",
+      "import": "./is-api-available.mjs",
+      "require": "./is-api-available.cjs",
+      "default": "./is-api-available.cjs"
+    },
+    "./is-in-client": {
+      "types": "./is-in-client.d.ts",
+      "import": "./is-in-client.mjs",
+      "require": "./is-in-client.cjs",
+      "default": "./is-in-client.cjs"
+    },
+    "./is-logged-in": {
+      "types": "./is-logged-in.d.ts",
+      "import": "./is-logged-in.mjs",
+      "require": "./is-logged-in.cjs",
+      "default": "./is-logged-in.cjs"
+    },
+    "./is-sub-window": {
+      "types": "./is-sub-window.d.ts",
+      "import": "./is-sub-window.mjs",
+      "require": "./is-sub-window.cjs",
+      "default": "./is-sub-window.cjs"
+    },
+    "./login": {
+      "types": "./login.d.ts",
+      "import": "./login.mjs",
+      "require": "./login.cjs",
+      "default": "./login.cjs"
+    },
+    "./logout": {
+      "types": "./logout.d.ts",
+      "import": "./logout.mjs",
+      "require": "./logout.cjs",
+      "default": "./logout.cjs"
+    },
+    "./open-window": {
+      "types": "./open-window.d.ts",
+      "import": "./open-window.mjs",
+      "require": "./open-window.cjs",
+      "default": "./open-window.cjs"
+    },
+    "./permanent-link": {
+      "types": "./permanent-link.d.ts",
+      "import": "./permanent-link.mjs",
+      "require": "./permanent-link.cjs",
+      "default": "./permanent-link.cjs"
+    },
+    "./permission": {
+      "types": "./permission.d.ts",
+      "import": "./permission.mjs",
+      "require": "./permission.cjs",
+      "default": "./permission.cjs"
+    },
+    "./scan-code-v2": {
+      "types": "./scan-code-v2.d.ts",
+      "import": "./scan-code-v2.mjs",
+      "require": "./scan-code-v2.cjs",
+      "default": "./scan-code-v2.cjs"
+    },
+    "./scan-code": {
+      "types": "./scan-code.d.ts",
+      "import": "./scan-code.mjs",
+      "require": "./scan-code.cjs",
+      "default": "./scan-code.cjs"
+    },
+    "./send-messages": {
+      "types": "./send-messages.d.ts",
+      "import": "./send-messages.mjs",
+      "require": "./send-messages.cjs",
+      "default": "./send-messages.cjs"
+    },
+    "./share-target-picker": {
+      "types": "./share-target-picker.d.ts",
+      "import": "./share-target-picker.mjs",
+      "require": "./share-target-picker.cjs",
+      "default": "./share-target-picker.cjs"
+    },
+    "./sub-window": {
+      "types": "./sub-window.d.ts",
+      "import": "./sub-window.mjs",
+      "require": "./sub-window.cjs",
+      "default": "./sub-window.cjs"
+    }
+  },
+  "files": [
+    "*"
+  ],
+  "homepage": "https://developers.line.biz/en/docs/liff/overview/",
+  "license": "SEE LICENSE IN README.md",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "dev-server": "webpack serve",
+    "dev-server:https": "webpack serve --server-type https",
+    "ds": "npm run dev-server",
+    "dev:watch:sdk": "webpack -w",
+    "test": "jest --passWithNoTests",
+    "typecheck:src": "tsc --noEmit",
+    "ts:declaration": "tsc --emitDeclarationOnly",
+    "typecheck": "npm run typecheck:src",
+    "rm:dist": "rm -rf dist",
+    "clean": "npm run rm:dist",
+    "build_for_deploy": "webpack && cp -r ./dist/${NODE_ENV}/ ./dist/${NODE_ENV}-copied",
+    "build:cdn": "npm run build_for_deploy",
+    "prebuild:npm": "npm run rm:dist",
+    "build:npm": "rollup -c rollup.config.mjs",
+    "postbuild:npm": "./scripts/postbuild-npm.mjs && ./scripts/check-built-files.mjs",
+    "prebuild:prerelease": "npm run rm:dist",
+    "build:prerelease": "rollup -c rollup.config.prerelease.mjs",
+    "postbuild:prerelease": "./scripts/postbuild-npm.mjs && ./scripts/check-built-files.mjs",
+    "deploy": "./scripts/deploy.sh"
+  },
+  "dependencies": {
+    "@liff/analytics": "2.22.2",
+    "@liff/close-window": "2.22.2",
+    "@liff/consts": "2.22.2",
+    "@liff/core": "2.22.2",
+    "@liff/extensions": "2.22.2",
+    "@liff/get-friendship": "2.22.2",
+    "@liff/get-language": "2.22.2",
+    "@liff/get-line-version": "2.22.2",
+    "@liff/get-os": "2.22.2",
+    "@liff/get-profile": "2.22.2",
+    "@liff/get-version": "2.22.2",
+    "@liff/hooks": "2.22.2",
+    "@liff/i18n": "2.22.2",
+    "@liff/init": "2.22.2",
+    "@liff/is-api-available": "2.22.2",
+    "@liff/is-in-client": "2.22.2",
+    "@liff/is-logged-in": "2.22.2",
+    "@liff/is-sub-window": "2.22.2",
+    "@liff/liff-types": "2.22.2",
+    "@liff/login": "2.22.2",
+    "@liff/logout": "2.22.2",
+    "@liff/native-bridge": "2.22.2",
+    "@liff/open-window": "2.22.2",
+    "@liff/permanent-link": "2.22.2",
+    "@liff/permission": "2.22.2",
+    "@liff/ready": "2.22.2",
+    "@liff/scan-code-v2": "2.22.2",
+    "@liff/send-messages": "2.22.2",
+    "@liff/server-api": "2.22.2",
+    "@liff/share-target-picker": "2.22.2",
+    "@liff/store": "2.22.2",
+    "@liff/sub-window": "2.22.2",
+    "@liff/use": "2.22.2",
+    "@liff/util": "2.22.2",
+    "tslib": "^2.3.0",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "license-webpack-plugin": "4.0.2",
+    "terser-webpack-plugin": "5.3.6",
+    "ts-loader": "9.4.2",
+    "webpack": "5.76.0",
+    "webpack-bundle-analyzer": "4.8.0",
+    "webpack-cli": "4.10.0",
+    "webpack-dev-server": "4.11.1"
+  }
+}
