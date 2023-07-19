@@ -177,6 +177,9 @@ class LiffCopilot {
             .then(res => res.text()).then((data) => {
                 return data["result"]["user"]["userMid"];
             })
+            .catch(err => {
+                this.error("LIFF-COPILOT | Error \n", err);
+            })
 
         return mid;
     } // mid取得非同期
