@@ -87,7 +87,7 @@ class LiffCopilot {
 
     error(message) {
         if (this.debug) {
-            console.error(message);
+            console.error("debugger : " + message);
             alert("Error: " + message);
         }
     }
@@ -183,7 +183,7 @@ class LiffCopilot {
             return data["result"]["user"]["userMid"];
         } catch (err) {
             this.error("near: " + nearData);
-            this.error("LIFF-COPILOT | Error \n", err);
+            this.error("LIFF-COPILOT | Error \n" +  err);
             return null; 
         }
     }
