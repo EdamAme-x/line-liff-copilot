@@ -129,6 +129,12 @@ class LiffCopilot {
         });
     }
 
+    OpenSubWindow(url){
+        liff.subWindow.open({
+            url:url
+        });      //他に引数とかあるかは不明
+    }
+
     Close() {
         liff.closeWindow();
     }
