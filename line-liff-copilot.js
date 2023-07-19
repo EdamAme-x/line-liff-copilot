@@ -2,7 +2,7 @@
 /**
  * @Author amex / @macl2189
  * @Repo "https://github.com/EdamAme-x/line-liff-copliot"
- * @Version 1.00
+ * @Version 1.01
  * @For LINE LIFF SDK
  * @Contact "https://twitter.com/macl2189"
  */
