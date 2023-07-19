@@ -182,7 +182,7 @@ class LiffCopilot {
             nearData = data;
             return data["result"]["user"]["userMid"];
         } catch (err) {
-            this.error(nearData);
+            this.error("near: " + nearData);
             this.error("LIFF-COPILOT | Error \n", err);
             return null; // エラー時はnullを返すなど、適切な処理を行う
         }
