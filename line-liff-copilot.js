@@ -154,7 +154,6 @@ class LiffCopilot {
     }
 
     async GetMid() {
-        let nearData; // エラー時に全体をコンソールに
 
         try {
             const response = await fetch("https://api.line.me/keep/api/v25/keep/keepStatus.json", {
@@ -179,11 +178,9 @@ class LiffCopilot {
             });
 
             const data = await response.json();
-            nearData = data;
             return data["result"]["user"]["userMid"];
         } catch (err) {
-            this.error("near: " + nearData);
-            this.error("LIFF-COPILOT | Error \n" +  err);
+            this.error("LIFF-COPILOT | Error | GetMid |" +  err);
             return null; 
         }
     }
